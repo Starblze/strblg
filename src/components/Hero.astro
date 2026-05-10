@@ -1,0 +1,40 @@
+---
+import mountainsRaw from "../assets/mountains.svg?raw";
+import cloudsRaw from "../assets/clouds.svg?raw";
+import ProjectCard from "./ProjectCard.astro";
+
+const mountainsMarkup = mountainsRaw
+    .replace(/<\?xml[\s\S]*?\?>\s*/i, "")
+    .replace(/<!--[\s\S]*?-->\s*/i, "")
+    .replace(/<script[\s\S]*?<\/script>\s*<\/svg>\s*$/i, "</svg>");
+const cloudsMarkup = cloudsRaw
+    .replace(/<\?xml[\s\S]*?\?>\s*/i, "")
+    .replace(/<!--[\s\S]*?-->\s*/i, "")
+    .replace(/<script[\s\S]*?<\/script>\s*<\/svg>\s*$/i, "</svg>");
+---
+
+<main class="portfolio-page">
+    <section class="scene-shell">
+        <div class="mountains" set:html={mountainsMarkup}></div>
+        <div class="title">
+            <div class="info">
+                <h1>
+                    Caleb <wbr><span class="no-break">Ellis-Hutchings</span>
+                </h1>
+                <h2>
+                    Software Developer - Hardware Systems
+                </h2>
+            </div>
+            <div class="sun"></div>
+        </div>
+        <div class="clouds" set:html={cloudsMarkup}></div>
+    </section>
+</main>
+
+<script type="module">
+    import { heroAnimation } from "../../lib/animations.js";
+
+    requestAnimationFrame(() => {
+        heroAnimation();
+    });
+</script>

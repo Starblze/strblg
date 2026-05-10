@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    background-image: radial-gradient(circle at right top, #55c9ff, #3988ac);
+    line-height: 1.6;
+}
+
+.scene-shell {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mountains {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 150vw;
+    height: auto;
+}
+
+.clouds {
+    position: absolute;
+    bottom: -120%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 150vw;
+    height: auto;
+}
+
+.sun {
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffc94d 0%, #ffcc00 70%);
+    filter: blur(1px);
+    box-shadow:
+        0 0 80px rgba(255, 210, 90, 0.45),
+        0 0 160px rgba(255, 210, 90, 0.2);
+}
+
+.title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transform: translateY(50%);
+
+    padding: 0px 10% 0px 0%;
+    
+    width: 100%;
+    height: auto;
+
+    gap: 25px;
+}
+
+.title .info {
+    padding-left: 5%;
+    padding: 10px;
+    padding-left: 5%;
+    padding-right: 2.5%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title h1 {
+    font-family: Poppins;
+    font-size: 70px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.title h2 {
+    font-family: Poppins;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.no-break {
+  white-space: nowrap;
+}

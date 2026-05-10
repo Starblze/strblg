@@ -1,0 +1,13 @@
+---
+const { eyebrow, title, summary, tags = [] } = Astro.props;
+---
+
+<article class="project-card">
+    <p class="project-card__eyebrow">{eyebrow}</p>
+    <h3>{title}</h3>
+    <p class="project-card__summary">{summary}</p>
+
+    <ul class="project-card__tags" aria-label={`${title} tech stack`}>
+        {tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+</article>
