@@ -32,7 +32,7 @@ const downArrowMarkup = downArrowRaw
                     </h2>
                 </div>
             </div>
-            
+
             <div class="sun"></div>
 
             <div class="clouds" set:html={cloudsMarkup}></div>
@@ -43,8 +43,8 @@ const downArrowMarkup = downArrowRaw
     </section>
 </main>
 
-<script type="module">
-    import { heroAnimation } from "../../lib/animations.js";
+<script>
+    import { heroAnimation } from "../../lib/animations";
 
     requestAnimationFrame(() => {
         heroAnimation();
