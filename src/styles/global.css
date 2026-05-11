@@ -19,14 +19,32 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: var(--font-body);
-    background-image: radial-gradient(circle at right top, #55c9ff, #3988ac);
+    background:
+        linear-gradient(
+            to bottom,
+            #6ed0ff 0%,
+            #4da6d7 40%,
+            #b38e3e 60%,
+            #a04337 100%
+        );
+
+    transition: background 0.2s linear;
     line-height: 1.6;
 }
 
 .scene-shell {
     position: relative;
     width: 100vw;
+    height: 300vh;
+}
+
+.scene-sticky {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
     height: 100vh;
+
     overflow: hidden;
 }
 
@@ -38,6 +56,9 @@ body {
     
     width: 150vw;
     height: auto;
+
+    filter: brightness(1);
+    z-index: 1;
 }
 
 .clouds {
@@ -48,9 +69,13 @@ body {
     
     width: 150vw;
     height: auto;
+    z-index: 2;
 }
 
 .sun {
+    position: absolute;
+    right: 10%;
+    top: 10%;
     width: 150px;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -59,6 +84,23 @@ body {
     box-shadow:
         0 0 80px rgba(255, 210, 90, 0.45),
         0 0 160px rgba(255, 210, 90, 0.2);
+    z-index: 0;
+}
+
+.sunset-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 170, 100, 0.35) 0%,
+            rgba(255, 120, 80, 0.45) 40%,
+            rgba(80, 20, 80, 0.75) 100%
+        );
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
 }
 
 .title {
@@ -75,6 +117,7 @@ body {
     height: auto;
 
     gap: 25px;
+    z-index: 5;
 }
 
 .title .info {
@@ -106,4 +149,19 @@ body {
 
 .no-break {
   white-space: nowrap;
+}
+
+.scroll-prompt {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(137, 126, 76, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    left: 50%;
+    bottom: 100px;
+    transform: translate(-50%, 200px);
+    z-index: 5;
 }
